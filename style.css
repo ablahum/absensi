@@ -10,7 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: beige;
 }
 
@@ -18,23 +18,12 @@ body {
   border: 2px solid #333;
   width: 700px;
   height: 700px;
-  padding: 8px;
-}
-
-.title {
-  font-size: 3em;
-  text-align: center;
-  margin-bottom: 12px;
-  padding: 8px;
+  padding: 16px;
 }
 
 .form-login {
   display: flex;
   flex-direction: column;
-}
-
-label {
-  font-size: 20px;
 }
 
 .input-login {
@@ -54,7 +43,18 @@ label {
   cursor: pointer;
 }
 
-.notification {
+.title {
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 12px;
+  padding: 8px;
+}
+
+label {
+  font-size: 20px;
+}
+
+.notif-login {
   background-color: tomato;
   font-style: italic;
   text-align: center;
