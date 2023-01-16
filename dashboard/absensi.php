@@ -1,4 +1,3 @@
-
 <table border="1">
   <tr>
     <th>Tanggal</th>
@@ -53,6 +52,5 @@ if (isset($_POST['keluar'])) {
     session_destroy();
     header("location:../index.php");
   }
-
 }
 ?>
