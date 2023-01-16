@@ -2,12 +2,12 @@
 session_start();
 
 if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
-  header("location:../index.php?message=Anda harus login terlebih dahulu");
+  header("location:../index.php?message=silahkan login terlebih dahulu");
 }
 
 if (isset($_POST['logout'])) {
   session_destroy();
-  header("location:../index.php?message=Berhasil logout");
+  header("location:../index.php?message=keluar dari sistem");
 }
 ?>
 
@@ -23,29 +23,16 @@ if (isset($_POST['logout'])) {
   <div>
     <section>
       <h3>Halo <?php echo $_SESSION['fullname']; ?></h3>
-      
-      <p>Status pegawai: <?php echo $_SESSION['role']; ?></p>
-
+      <p>status pegawai: <?php echo $_SESSION['role']; ?></p>
       <br/>
-      <div>
-        <table border="1">
-          <tr>
-            <th>TANGGAL</th>
-            <th>JAM MASUK</th>
-            <th>JAM KELUAR</th>
-            <th>PERFORMA</th>
-          </tr>
-          <!-- data absen -->
-          <?php
-            include("attendance.php")
-          ?>
-      </div>
+      <?php
+      if (isset($_GET['message'])) {
+        echo $_GET['message'];
+      }
+      ?>
+      <!-- table absen -->
+      <?php include("absensi.php"); ?>
       <br/>
-      <form action="" method="POST">
-        <button type="submit" name="absen">ABSEN SEKARANG</button>
-      </form>
-      <br/>
-
       <form action="" method="POST">
         <button name="logout" type="submit">logout</button>
       </form>
