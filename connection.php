@@ -9,5 +9,4 @@
   if ($db->connect_error) {
     echo "error connection";
   }
-
 ?>
