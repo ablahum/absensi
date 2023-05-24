@@ -5,36 +5,35 @@
     <th>Jam Keluar</th>
     <th>Performa</th>
   </tr>
-
 <?php
-include("../connection.php");
+  include("../connection.php");
 
-date_default_timezone_set("Asia/Jakarta"); //GMT +07
+  date_default_timezone_set("Asia/Jakarta"); //GMT +07
 
-$tgl = date('Y-m-d');
-$time = date('H:i:s');
-$employee_id = $_SESSION['employee_id'];
+  $tgl = date('Y-m-d');
+  $time = date('H:i:s');
+  $employee_id = $_SESSION['employee_id'];
 
-$sql = "SELECT * FROM attendances WHERE employee_id=$employee_id";
-$result = $db->query($sql);
+  $sql = "SELECT * FROM attendances WHERE employee_id=$employee_id";
+  $result = $db->query($sql);
 
-while ($row = $result->fetch_assoc()) {
-  echo "<tr>";
-  echo "<td>" . $row['tgl'] . "</td>";
-  echo "<td>" . $row['clock_in'] . "</td>";
+  while ($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>" . $row['tgl'] . "</td>";
+    echo "<td>" . $row['clock_in'] . "</td>";
 
-  if (empty($row['clock_out']) && !empty($row['clock_in']) && $tgl == $row['tgl']) {
-    echo "<td>
-    <form action='' method='POST' onsubmit='return alert(`terimakasih sudah bekerja hari ini`)'>
-      <button type='submit' name='keluar'>KELUAR</button>
-    </form>
-    </td>";
-  } else {
-    echo "<td>" . $row['clock_out'] . "</td>";
+    if (empty($row['clock_out']) && !empty($row['clock_in']) && $tgl == $row['tgl']) {
+      echo "<td>
+      <form action='' method='POST' onsubmit='return alert(`terimakasih sudah bekerja hari ini`)'>
+        <button type='submit' name='keluar'>KELUAR</button>
+      </form>
+      </td>";
+    } else {
+      echo "<td>" . $row['clock_out'] . "</td>";
+    }
+    echo "<td>😂</td>";
+    echo "</tr>";
   }
-  echo "<td>😂</td>";
-  echo "</tr>";
-}
 ?>
 </table>
 
@@ -43,14 +42,14 @@ while ($row = $result->fetch_assoc()) {
 </form>
 
 <?php
-if (isset($_POST['keluar'])) {
-  $update = "UPDATE attendances SET clock_out='$time' WHERE employee_id=$employee_id AND tgl='$tgl'";
+  if (isset($_POST['keluar'])) {
+    $update = "UPDATE attendances SET clock_out='$time' WHERE employee_id=$employee_id AND tgl='$tgl'";
 
-  $clock_out = $db->query($update);
-  if ($clock_out === TRUE) {
-    session_start();
-    session_destroy();
-    header("location:../index.php");
+    $clock_out = $db->query($update);
+    if ($clock_out === TRUE) {
+      session_start();
+      session_destroy();
+      header("location:../index.php");
+    }
   }
-}
 ?>
