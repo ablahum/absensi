@@ -26,13 +26,16 @@
         <h3>Halo <?php echo $_SESSION['fullname']; ?></h3>
         <p>status pegawai: <?php echo $_SESSION['role']; ?></p>
         <br/>
+
         <?php
         if (isset($_GET['message'])) {
           echo $_GET['message'];
         }
         ?>
+        
         <!-- table absen -->
         <?php include("absensi.php"); ?>
+
         <br/>
         <form action="" method="POST">
           <button name="logout" type="submit">logout</button>
