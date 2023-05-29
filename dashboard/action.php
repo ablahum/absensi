@@ -25,6 +25,5 @@
         header("location:index.php?message=absensi gagal!");
       }
     }
-
   }
 ?>
