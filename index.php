@@ -19,7 +19,7 @@
   <body>
     <div class="container">
       <div  class="wrapper">
-        <h3 class="title">LOGINsssssssss</h3>
+        <h3 class="title">LOGIN</h3>
         
         <!-- notifikasi -->
         <?php
@@ -39,7 +39,7 @@
 
             <input placeholder="******" name="password" type="password" class="input-login" required/>
 
-            <button type="submit" class="button-login" name="login">Loginssssssssss</button>
+            <button type="submit" class="button-login" name="login">Login</button>
           </form>
         </div>
       </div>
