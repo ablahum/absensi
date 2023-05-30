@@ -1,5 +1,6 @@
 <?php
   session_start();
+
   if (isset($_SESSION['status']) && $_SESSION['status'] == "login") {
     header("location:dashboard/index.php");
   }
@@ -13,12 +14,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./styles/style.css"/>
-    <title>ABSENSI</title>
+    <title>Absensi</title>
   </head>
   <body>
     <div class="container">
       <div  class="wrapper">
-        <h3 class="title">LOGIN</h3>
+        <h3 class="title">LOGINsssssssss</h3>
         
         <!-- notifikasi -->
         <?php
@@ -38,7 +39,7 @@
 
             <input placeholder="******" name="password" type="password" class="input-login" required/>
 
-            <button type="submit" class="button-login" name="login">Login</button>
+            <button type="submit" class="button-login" name="login">Loginssssssssss</button>
           </form>
         </div>
       </div>

@@ -8,5 +8,7 @@
 
   if ($db->connect_error) {
     echo "error connection";
+  } else {
+    echo "benar adanya";
   }
 ?>
