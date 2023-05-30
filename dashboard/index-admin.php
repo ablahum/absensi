@@ -11,6 +11,7 @@
     
     <title>Document</title>
   </head>
+  
   <body>
     <button>tambah pegawai</button>
     <button>data absen pegawai</button>
