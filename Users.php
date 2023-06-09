@@ -18,8 +18,7 @@
       return $this->password;
     }
 
-    // function set_profile_data()
-    // {
+    // function set_profile_data() {
 
     // }
   }
