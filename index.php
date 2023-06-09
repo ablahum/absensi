@@ -16,11 +16,10 @@
     <link rel="stylesheet" href="./styles/style.css"/>
     <title>Absensi</title>
   </head>
+  
   <body>
     <div class="container">
       <div  class="wrapper">
-        <h3 class="title">LOGIN</h3>
-        
         <!-- notifikasi -->
         <?php
         if (isset($_GET['message'])) {
@@ -29,19 +28,19 @@
         }
         ?>
 
-        <div>
-          <form action="login.php" method="POST" class="form-login">
-            <label>masukan nomor induk</label>
+        <h3 class="title">LOGIN</h3>
 
-            <input placeholder="nip" name="nip" type="number" class="input-login" required/>
+        <form action="login.php" method="POST" class="form-login">
+          <label>masukan nomor induk</label>
 
-            <label>masukan password</label>
+          <input placeholder="nip" name="nip" type="number" class="input-login" required/>
 
-            <input placeholder="******" name="password" type="password" class="input-login" required/>
+          <label>masukan password</label>
 
-            <button type="submit" class="button-login" name="login">Login</button>
-          </form>
-        </div>
+          <input placeholder="******" name="password" type="password" class="input-login" required/>
+
+          <button type="submit" class="button-login" name="login">Login</button>
+        </form>
       </div>
     </div>
   </body>
